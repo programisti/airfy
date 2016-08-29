@@ -1,6 +1,5 @@
 defmodule Airfy do
   def encrypt(data) when is_binary(data) do
-    key = "123"
     case File.read("public_key") do
       {:ok, content} ->
         data |> RsaEx.encrypt(content)
